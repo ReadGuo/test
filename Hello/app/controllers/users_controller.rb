@@ -61,6 +61,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def send_email
+    email = params[:email]
+    count = params[:count]
+    if NotifierMailer.welcome(email,count).deliver_now
+      render html: 'ok'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
