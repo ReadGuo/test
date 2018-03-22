@@ -53,18 +53,18 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #ActionMailer邮件配置
-  ActionMailer::Base.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
+  ActionMailer::Base.delivery_method = :smtp #定义传输协议
+  config.action_mailer.perform_deliveries = true #执行传输
   config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  ActionMailer::Base.smtp_settings = {
-      :address => "smtp.163.com",
-      :port => 25,
-      :domain => "163.com",
-      :authentication => "plain",
+  ActionMailer::Base.smtp_settings = {  #配置参数
+      :address => "smtp.163.com",   #smtp服务器地址
+      :port => 25,                  #端口 25是不需要验证端口
+      :domain => "163.com",         #域
+      :authentication => "plain",   #登录验证
       :enable_starttls_auto => true,
       :user_name => "Guoyunpeng12@163.com",
-      :password => "gyp291794126"
+      :password => "gyp291794126"   #163邮箱的密码不是登录密码而是客户端授权码
   }
   
 end
