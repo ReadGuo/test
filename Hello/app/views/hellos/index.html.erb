@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+</thead>
+<div>
+<tbody>
+    <% if @hello.present? %>
+        <% @hello.each do |h| %>
+            <tr>
+                <td><%= h.id %></td>
+                <td><%= h.name %></td>
+                <td><%= h.email %></td>
+            </tr>
+        <% end %>
+    <% end %>
+</tbody>
+</div>
+</table>
